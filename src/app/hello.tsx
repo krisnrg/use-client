@@ -1,11 +1,18 @@
 "use client"
 
-import react from 'react';
+import react, { useEffect } from 'react';
 
 const Hello = () => {
-    console.log('this is running on the server too');
+
+    useEffect(() => {
+        setTimeout(() => {
+          console.log('This only runs on client, if you remoev "use client" above you get an error cause this hook is here.')
+        }, 1000);
+      });
+      
+    console.log('This runs on both server and client.');
     return (
-        <div>Hello world from Next 14, using 'use client'</div>
+        <div>Hello world from Next 14</div>
     )
 }
 
